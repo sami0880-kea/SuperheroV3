@@ -43,8 +43,8 @@ public class SuperheroController {
     }
 
     @PostMapping(path = "/edit/{name}")
-    public ResponseEntity<Superhero> editSuperhero(@PathVariable Superhero superhero, String name){
-        Superhero superhero1 = superheroService.searchAlias(name).get(0);
+    public ResponseEntity<Superhero> editSuperhero(@RequestBody Superhero superhero, @PathVariable String name){
+        superheroService.editSuperhero(name, superhero);
         return new ResponseEntity<>(superhero, HttpStatus.OK);
     }
 }

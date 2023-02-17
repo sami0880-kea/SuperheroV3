@@ -21,6 +21,10 @@ public class SuperheroRepository {
         heroes.add(superhero);
     }
 
+    public void replaceSuperhero(String name, Superhero superhero) {
+        int nr = heroes.indexOf(searchByAlias(name).get(0));
+        heroes.set(nr, superhero);
+    }
     public void deleteSuperhero(Superhero superhero) {
         heroes.remove(superhero);
     }

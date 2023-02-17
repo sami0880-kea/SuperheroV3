@@ -31,6 +31,10 @@ public class SuperheroService {
         return superheroRepository.searchByAlias(name);
     }
 
+    public void editSuperhero(String name, Superhero superhero) {
+        superheroRepository.replaceSuperhero(name, superhero);
+    }
+
     public void deleteSuperhero(Superhero superhero) {
         superheroRepository.deleteSuperhero(superhero);
     }
