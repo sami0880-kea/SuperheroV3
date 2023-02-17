@@ -13,10 +13,6 @@ public class SuperheroRepository {
 
     private ArrayList<Superhero> heroes = new ArrayList<>();
 
-    public void addArraySuperhero(ArrayList<Superhero> s) {
-        heroes = s;
-    }
-
     public void addSuperheros(String name, String alias, String power, int year, double strength) {
         heroes.add(new Superhero(name, alias, power, year, strength));
     }
@@ -25,13 +21,8 @@ public class SuperheroRepository {
         heroes.add(superhero);
     }
 
-    public Boolean removeSuperhero(int nr) {
-        if (nr <= heroes.size()) {
-            heroes.remove(nr - 1);
-            return true;
-        } else {
-            return false;
-        }
+    public void deleteSuperhero(Superhero superhero) {
+        heroes.remove(superhero);
     }
 
     public ArrayList<Superhero> getHeros() {
@@ -49,4 +40,3 @@ public class SuperheroRepository {
         return heroList;
     }
 }
-

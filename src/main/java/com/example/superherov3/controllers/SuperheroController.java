@@ -35,5 +35,16 @@ public class SuperheroController {
         return new ResponseEntity<>(superhero,HttpStatus.OK);
     }
 
+    @PostMapping(path = "/delete/{name}")
+    public ResponseEntity<Superhero> deleteSuperhero(@PathVariable String name){
+        Superhero superhero = superheroService.searchAlias(name).get(0);
+        superheroService.deleteSuperhero(superhero);
+        return new ResponseEntity<>(superhero, HttpStatus.OK);
+    }
 
+    @PostMapping(path = "/edit/{name}")
+    public ResponseEntity<Superhero> editSuperhero(@PathVariable Superhero superhero, String name){
+        Superhero superhero1 = superheroService.searchAlias(name).get(0);
+        return new ResponseEntity<>(superhero, HttpStatus.OK);
+    }
 }

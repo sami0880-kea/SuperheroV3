@@ -26,4 +26,12 @@ public class SuperheroService {
     public void addSuperhero(Superhero superhero) {
         superheroRepository.addSuperhero(superhero);
     }
+
+    public ArrayList<Superhero> searchAlias(String name) {
+        return superheroRepository.searchByAlias(name);
+    }
+
+    public void deleteSuperhero(Superhero superhero) {
+        superheroRepository.deleteSuperhero(superhero);
+    }
 }
