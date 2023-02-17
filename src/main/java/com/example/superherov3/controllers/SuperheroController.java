@@ -12,9 +12,9 @@ import java.util.List;
 @RequestMapping("db")
 public class SuperheroController {
 
-    private SuperheroService superheroService;
+    private final SuperheroService superheroService;
 
-    public SuperheroController(SuperheroService superheroService){
+    public SuperheroController(){
         this.superheroService = new SuperheroService();
     }
     @GetMapping(path = "/")

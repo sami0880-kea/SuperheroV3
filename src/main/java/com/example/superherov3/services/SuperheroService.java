@@ -8,8 +8,7 @@ import java.util.List;
 
 @Service
 public class SuperheroService {
-    private SuperheroRepository superheroRepository;
-
+    private final SuperheroRepository superheroRepository;
 
     public SuperheroService(){
         this.superheroRepository = new SuperheroRepository();
